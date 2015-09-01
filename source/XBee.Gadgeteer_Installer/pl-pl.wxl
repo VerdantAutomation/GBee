@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Product strings for pl-pl culture
+-->
+
+<WixLocalization xmlns="http://schemas.microsoft.com/wix/2006/localization"
+                 Culture="pl-pl">
+
+  <!-- No need to change these settings -->
+  <String Id="ModulesDirectoryName">Moduły</String>
+  <String Id="GadgeteerDirectoryName">Microsoft .NET Gadgeteer</String>
+  <String Id="ForGadgeteer">moduł dla Microsoft .NET Gadgeteer</String>
+  <String Id="NewerVersionFoundPrefix">Nowsza werjsa</String>
+  <String Id="NewerVersionFoundSuffix">jest już zainstalowana. Instalacja zostanie zakończona..</String>
+  <String Id="SameVersionInstalledPrefix">Numer wersji nie został poprawnie odczytany. Odinstaluj ręcznie</String>
+  <String Id="SameVersionInstalledSuffix">i uruchom instalator ponownie.</String>
+  <String Id="GadgeteerCoreIsNotInstalled">Microsoft .NET Gadgeteer Core nie jest zainstalowany. Zainstaluje go (http://gadgeteer.codeplex.com/).</String>
+</WixLocalization>

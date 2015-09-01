@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Change this whenever building a new installer.  The fourth number is ignored, so change one of the top three.
+  Otherwise, users will not be able to upgrade properly; Windows Installer will exit with an error instead of upgrading. -->
+  <!-- Also change the version numbers in Properties/AssemblyInfo.cs for each NETMF version supported -->
+  <?define ModuleSoftwareVersion = "1.0.0.0" ?>
+
+  <!-- Alternatively, to synchronize this mainboard version to a kit version, uncomment the below lines, edit the pathname
+  to point to your kit, and comment out the line above.  You also need to edit AssemblyInfo.cs.  See the kit readme.txt 
+  for more details of how and why to do this. -->
+  <!--
+  <?include $(var.SourcePath)..\..\..\..\..\Kits\OpenSource\KitName\Software\KitName\version.wxi ?>
+  <?define ModuleSoftwareVersion = "$(var.KitVersion)" ?>
+  -->
+
+  <!-- SafeModuleName should match the name printed on the module PCB, without any spaces/punctuation. -->
+  <?define SafeModuleName = "XBee" ?>
+
+  <!-- SafeManufacturer should match the manufacturer name printed on the module PCB, without any spaces/punctuation. -->
+  <?define SafeManufacturer = "OpenSource" ?>
+
+  <!-- FullManufacturer can have spaces, e.g. Microsoft Research.  This shows up as the manufacturer name in add/remove programs. -->
+  <?define FullManufacturer = "Open Source" ?>
+
+  <!-- These define which versions of NETMF are supported - comment out or delete any unsupported NETMF versions. -->
+  <?define NETMF41Supported ?>
+  <?define NETMF42Supported ?>
+
+
+  <!-- No need to change anything below this line. -->
+  <?define OutputFileName = "GTM.$(var.SafeManufacturer).$(var.SafeModuleName)"?>
+  <?define ProjectPath = "XBee.Gadgeteer" ?>
+
+  <!-- These two should be copied over if upgrading from an older template -->
+  <?define guid_msi_upgrade_code =  "859a2161-9dd8-42f2-8c0d-dcdfc24cde95" ?>
+  <?define guid_msm_package_id = "b8e02675-7130-412f-92db-005bddeac0c6" ?>
+
+  <?define guid_msm_comp_resources_id = "0c2197a5-5454-4305-a196-94339c41376b" ?>
+  <?define guid_msm_comp_registry_id = "63cb30e8-2136-4fd0-990a-70bc944eb596" ?>
+  <?define guid_msm_comp_gadgeteerhardware_id = "e11d639d-3d0d-465e-833e-d3d5ad2937a8"?>
+
+  <?define guid_msm_comp_files_id_41 = "28cc8e76-6ed8-497e-8011-63455edf135a" ?>
+  <?define guid_msm_comp_files_be_id_41 = "f895bb3f-dbcf-4c14-abcb-d28d133005c9" ?>
+  <?define guid_msm_comp_files_le_id_41 = "5ea6af27-d6bc-4894-a843-4cf6df255998" ?>
+
+  <?define guid_msm_comp_files_id_42 = "43660081-981e-4100-8e2f-ae98918b9343" ?>
+  <?define guid_msm_comp_files_be_id_42 = "00297e8c-319c-4b5d-8b98-f48f50e68390" ?>
+  <?define guid_msm_comp_files_le_id_42 = "293ca15b-f1c7-4ce9-b48b-d88448459836" ?>
+  
+</Include>
+
