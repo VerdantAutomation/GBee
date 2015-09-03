@@ -60,7 +60,7 @@
   <ItemGroup>
     <ProjectReference Include="..\XBee_42\XBee.csproj">
       <Project>{7F280F44-4AE1-4917-83BC-36825E729EC2}</Project>
-      <Name>XBee %28NETMF\4.2\XBee%29</Name>
+      <Name>XBee</Name>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

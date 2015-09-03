@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>56a05d2d-e50f-49e9-a46d-cfdf79c58945</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>XBee.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Api\ApiId.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\AsyncSendResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Checksum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\ApiMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\ApiModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\AtCmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\AtString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\DiscoverResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\Firmware.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\HardwareVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\HardwareVersions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\NodeIdentifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\NodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\ResetMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\SaveSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Common\SerialNumber.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\ErrorResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Address\XBeeAddress.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Address\XBeeAddress16.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Address\XBeeAddress64.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Address\XBeeAddressIp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\AtCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\AtCommandQueue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\AtResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\AtResponseStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\RemoteAtCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\At\RemoteAtResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\AddressPacketFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\AtResponseFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\AtResponseHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\DataPacketFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\IPacketFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\IPacketListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\NodeDiscoveryFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\PacketCountFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\PacketIdFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\PacketListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\PacketTypeFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Listenning\ResponseHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\AtRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\DataDelegateRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\DataRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\IRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\RawRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Features\Sending\RequestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\GenericResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\INoRequestResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\IPacketParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\ModemStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\ModemStatusResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\PacketIdGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\PacketParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\WiFi\AtCmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\AssociationStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\AtCmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\DiscoverResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\IoSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\IoSampleResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\IWpanPacket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\Pin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\PowerLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\RxResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\RxResponseBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\SleepMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\TxRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Wpan\TxStatusResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeFrameIdResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeePacket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeParseException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\XBeeTimeoutException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\AssociationStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\AtCmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\DeviceType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\DiscoverResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\ExplicitRxResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\ExplicitTxRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\IoSampleResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\IZigbeePacket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\NodeIdentificationResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\NodeType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\ProfileId.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\RxResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\RxResponseBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\TxRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\TxStatusResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IXBeeConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerialConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\AdcHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\Arrays.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\ByteUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\IInputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\InputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\IOutputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\OutputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\UshortUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XBeeApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XBeePin.cs" />
+  </ItemGroup>
+</Project>

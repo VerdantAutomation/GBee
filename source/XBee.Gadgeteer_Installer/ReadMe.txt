@@ -37,6 +37,7 @@ This template supports both NETMF 4.1 and NETMF 4.2 - so modules can provide a d
 The template is split into three projects each starting with the name of the module:
  [ModuleName]_41 : the NETMF 4.1 driver for the module
  [ModuleName]_42 : the NETMF 4.2 driver for the module
+ [ModuleName]_43 : the NETMF 4.3 driver for the module
  [ModuleName] : the installer for the module
 
 For the NETMF projects, the files are similar:
