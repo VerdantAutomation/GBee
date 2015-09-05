@@ -29,7 +29,7 @@
 
   <!-- No need to change anything below this line. -->
   <?define OutputFileName = "GTM.$(var.SafeManufacturer).$(var.SafeModuleName)"?>
-  <?define ProjectPath = "XBee.Gadgeteer" ?>
+  <?define ProjectPrefix = "XBee.Gadgeteer" ?>
 
   <!-- These two should be copied over if upgrading from an older template -->
   <?define guid_msi_upgrade_code =  "859a2161-9dd8-42f2-8c0d-dcdfc24cde95" ?>
@@ -46,6 +46,10 @@
   <?define guid_msm_comp_files_id_42 = "43660081-981e-4100-8e2f-ae98918b9343" ?>
   <?define guid_msm_comp_files_be_id_42 = "00297e8c-319c-4b5d-8b98-f48f50e68390" ?>
   <?define guid_msm_comp_files_le_id_42 = "293ca15b-f1c7-4ce9-b48b-d88448459836" ?>
-  
+
+  <?define guid_msm_comp_files_id_43 = "ca73d3b4-3c19-42e5-8921-c6ddf7a73c73" ?>
+  <?define guid_msm_comp_files_be_id_43 = "06e9ace2-ece6-4016-b429-89c50fdafb18" ?>
+  <?define guid_msm_comp_files_le_id_43 = "9d243b64-d86e-4d62-aa27-4ce6fe2c26ff" ?>
+
 </Include>
 

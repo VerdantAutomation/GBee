@@ -8,6 +8,9 @@ installation merge module (MSM) that can be used to make kit installers includin
 
 We recommend that you read the Module Builder's Guide at http://gadgeteer.codeplex.com/ for full details.
 
+NOTE:
+This msm setup was heavily modified by Martin Calsyn (martin@pervasive.digital) for use with Wix 3.10 and VS2015
+
 ==============================================
 
 SYSTEM REQUIREMENT

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <?include common.wxi?>
-  
-  <Product Name='$(var.SafeModuleName) !(loc.ForGadgeteer)' 
-           Id='*' 
+
+  <Product Name='$(var.SafeModuleName) !(loc.ForGadgeteer)'
+           Id='*'
            UpgradeCode='$(var.guid_msi_upgrade_code)'
-           Language='1033' Codepage='1252' 
-           Version='$(var.ModuleSoftwareVersion)' 
+           Language='1033' Codepage='1252'
+           Version='$(var.ModuleSoftwareVersion)'
            Manufacturer='$(var.FullManufacturer)'>
 
-    <Package Id='*' 
+    <Package Id='*'
              Manufacturer='$(var.FullManufacturer)'
              InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252'
              InstallPrivileges='elevated'/>
@@ -37,7 +37,7 @@
                       OnlyDetect="yes"/>
 
     </Upgrade>
-    
+
     <CustomAction Id='NoDowngrade' Error='!(loc.NewerVersionFoundPrefix) $(var.SafeModuleName) !(loc.NewerVersionFoundSuffix)' />
 
     <CustomAction Id='SameVersionError' Error='!(loc.SameVersionInstalledPrefix) $(var.SafeModuleName) !(loc.SameVersionInstalledSuffix)'/>
@@ -51,19 +51,19 @@
     <!--ARP stuff (Add/Remove Programs)-->
     <Property Id="ARPNOMODIFY" Value="1" />
     <Property Id="ARPNOREPAIR" Value="1" />
-    
+
     <!-- Files -->
     <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
 
     <Directory Id='TARGETDIR' Name='SourceDir'>
-      <Merge Id="id_msm" Language="1033" SourceFile="$(var.BinPath)\..\Installer\$(var.SafeModuleName).msm" DiskId="1" />
+      <Merge Id="id_msm" Language="1033" SourceFile="$(var.ProjectDir)..\XBeeGadgeteerMSM\$(var.OutDir)en-us\XBee.msm" DiskId="1" />
     </Directory>
 
     <Feature Id="main" Title="Main" Level="1">
-      <MergeRef Id="id_msm" />      
+      <MergeRef Id="id_msm" />
     </Feature>
 
-    <Icon Id="AppAddRemoveIcon" SourceFile="$(var.SourcePath)\G.ico"/>
+    <Icon Id="AppAddRemoveIcon" SourceFile="$(var.ProjectDir)\G.ico"/>
     <Property Id="ARPPRODUCTICON" Value="AppAddRemoveIcon"/>
 
     <!--Sequences-->
@@ -80,7 +80,7 @@
 
       <!--Display an error if gadgeteer core is not installed-->
       <Custom Action="GadgeteerCoreNotInstalledError" Before="InstallInitialize">&amp;main&gt;2 AND NOT GADGETEER_CORE_INSTALLED</Custom>
-      
+
     </InstallExecuteSequence>
 
   </Product>
