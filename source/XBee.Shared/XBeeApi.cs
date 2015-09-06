@@ -11,6 +11,10 @@ using RxResponse = NETMF.OpenSource.XBee.Api.Zigbee.RxResponse;
 using TxRequest = NETMF.OpenSource.XBee.Api.Wpan.TxRequest;
 using TxStatusResponse = NETMF.OpenSource.XBee.Api.Zigbee.TxStatusResponse;
 
+#if WINDOWS_UWP
+using Windows.Devices.SerialCommunication;
+#endif
+
 namespace NETMF.OpenSource.XBee
 {
     /// <summary>
@@ -67,10 +71,17 @@ namespace NETMF.OpenSource.XBee
             };
         }
 
+#if WINDOWS_UWP
+        public XBeeApi(SerialDevice serialDevice)
+            : this(new SerialConnection(serialDevice))
+        {
+        }
+#else
         public XBeeApi(string portName, int baudRate)
             : this(new SerialConnection(portName, baudRate))
         {
         }
+#endif
 
         public void Open()
         {

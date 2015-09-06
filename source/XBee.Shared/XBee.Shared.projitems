@@ -99,7 +99,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\TxRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Api\Zigbee\TxStatusResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IXBeeConnection.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SerialConnection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\AdcHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\Arrays.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\ByteUtils.cs" />

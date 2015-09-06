@@ -4,6 +4,9 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using NETMF.OpenSource.XBee.Util;
+#if WINDOWS_UWP
+using System.Threading.Tasks;
+#endif
 
 namespace NETMF.OpenSource.XBee.Api
 {
@@ -39,8 +42,13 @@ namespace NETMF.OpenSource.XBee.Api
         private readonly ManualResetEvent _buffersAvailable;
         private Stream _currentBuffer;
 
+#if WINDOWS_UWP
+        private Task _parsingTask;
+        private CancellationTokenSource _cts = new CancellationTokenSource();
+#else
         private Thread _parsingThread;
         private bool _finished;
+#endif
 
         private readonly ArrayList _packetListeners;
 
@@ -62,12 +70,18 @@ namespace NETMF.OpenSource.XBee.Api
         {
             Stop();
 
+#if WINDOWS_UWP
+            Task.Run(() => ParsePackets(_cts.Token));
+#else
             _parsingThread = new Thread(ParsePackets);
             _parsingThread.Start();
+#endif
         }
 
         public void Stop()
         {
+#if WINDOWS_UWP
+#else
             if (_parsingThread == null)
                 return;
 
@@ -80,6 +94,7 @@ namespace NETMF.OpenSource.XBee.Api
             }
 
             _parsingThread = null;
+#endif
         }
 
         public void AddToParse(byte[] data)
@@ -109,16 +124,30 @@ namespace NETMF.OpenSource.XBee.Api
             Logger.LowDebug("Parser removed finished listener");
         }
 
+#if WINDOWS_UWP
+        private void ParsePackets(CancellationToken ct)
+#else
         private void ParsePackets()
+#endif
         {
+#if WINDOWS_UWP
+            while (!_cts.IsCancellationRequested)
+#else
             while (!_finished)
+
+#endif
             {
                 try
                 {
                     var b = TakeFromBuffer();
 
+#if WINDOWS_UWP
+                    if (_cts.IsCancellationRequested)
+                        return;
+#else
                     if (_finished)
                         return;
+#endif
 
                     if (!XBeePacket.IsStartByte(b))
                         continue;
@@ -149,11 +178,13 @@ namespace NETMF.OpenSource.XBee.Api
                 {
                     Logger.Warn("Errors occured while parsing received packet");
                 }
+#if !WINDOWS_UWP
                 catch (ThreadAbortException)
                 {
                     Logger.Debug("Thread aborted");
                     return;
                 }
+#endif
                 catch (Exception e)
                 {
                     Logger.Error("Unexpected exception occured while parsing packet. " + e.Message);
@@ -269,8 +300,13 @@ namespace NETMF.OpenSource.XBee.Api
 
             if (timeout > 0)
             {
+#if WINDOWS_UWP
+                if (!_buffersAvailable.WaitOne(timeout))
+                    throw new XBeeTimeoutException();
+#else
                 if (!_buffersAvailable.WaitOne(timeout, false))
                     throw new XBeeTimeoutException();
+#endif
             }
             else
             {
@@ -291,7 +327,7 @@ namespace NETMF.OpenSource.XBee.Api
             }
         }
 
-        #region IPacketParser Members
+#region IPacketParser Members
 
         public ApiId ApiId { get; protected set; }
 
@@ -440,6 +476,6 @@ namespace NETMF.OpenSource.XBee.Api
             return addr;
         }
 
-        #endregion
+#endregion
     }
 }

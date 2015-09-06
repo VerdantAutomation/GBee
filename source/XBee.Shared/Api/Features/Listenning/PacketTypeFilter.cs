@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace NETMF.OpenSource.XBee.Api
 {
@@ -16,7 +17,11 @@ namespace NETMF.OpenSource.XBee.Api
 
         public virtual bool Accepted(XBeeResponse packet)
         {
+#if WINDOWS_UWP
+            return packet.GetType() == _expectedType || packet.GetType().GetTypeInfo().IsSubclassOf(_expectedType);
+#else
             return _expectedType.IsInstanceOfType(packet);
+#endif
         }
 
         public virtual bool Finished()

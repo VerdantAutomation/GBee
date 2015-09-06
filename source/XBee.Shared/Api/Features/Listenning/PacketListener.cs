@@ -65,7 +65,11 @@ namespace NETMF.OpenSource.XBee.Api
 
         public XBeeResponse[] GetPackets(int timeout = -1)
         {
+#if WINDOWS_UWP
+            FinishedFlag.WaitOne(timeout);
+#else
             FinishedFlag.WaitOne(timeout, false);
+#endif
 
             if (Packets.Count == 0)
                 return new XBeeResponse[0];
