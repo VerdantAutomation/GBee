@@ -43,7 +43,6 @@ namespace NETMF.OpenSource.XBee.Api
         private Stream _currentBuffer;
 
 #if WINDOWS_UWP
-        private Task _parsingTask;
         private CancellationTokenSource _cts = new CancellationTokenSource();
 #else
         private Thread _parsingThread;
@@ -69,6 +68,8 @@ namespace NETMF.OpenSource.XBee.Api
         public void Start()
         {
             Stop();
+            // refresh this because we just triggered cancellation with the Stop call above
+            _cts = new CancellationTokenSource();
 
 #if WINDOWS_UWP
             Task.Run(() => ParsePackets(_cts.Token));
@@ -81,6 +82,7 @@ namespace NETMF.OpenSource.XBee.Api
         public void Stop()
         {
 #if WINDOWS_UWP
+            _cts.Cancel();
 #else
             if (_parsingThread == null)
                 return;
@@ -131,7 +133,7 @@ namespace NETMF.OpenSource.XBee.Api
 #endif
         {
 #if WINDOWS_UWP
-            while (!_cts.IsCancellationRequested)
+            while (!ct.IsCancellationRequested)
 #else
             while (!_finished)
 
@@ -142,7 +144,7 @@ namespace NETMF.OpenSource.XBee.Api
                     var b = TakeFromBuffer();
 
 #if WINDOWS_UWP
-                    if (_cts.IsCancellationRequested)
+                    if (ct.IsCancellationRequested)
                         return;
 #else
                     if (_finished)
